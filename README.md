@@ -41,9 +41,9 @@ A mini project for managing tasks built on Java, Springboot, PostgreSQL and Liqu
   5. GET: /tasks/all  -> Retrives all tasks and allows filtering based on Status
  
   # Validation
-  titile : Required
-  dueDate : must be a valid current or future date with format (yyyy-MM-dd)
-  status : TODO, IN_PROGRESS, DONE
+  - titile : Required
+  - dueDate : must be a valid current or future date with format (yyyy-MM-dd)
+  - status : TODO, IN_PROGRESS, DONE
   
  
     
