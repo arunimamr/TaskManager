@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 spring:
   application:
     name: TaskManager
   datasource:
-    url: jdbc:postgresql://localhost:5432/task_manager_db
-    username: postgres
-    password: admin123
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/task_manager_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:admin123}
   jpa:
     hibernate:
       ddl-auto: none
