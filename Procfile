@@ -1,1 +1,1 @@
-web: ./mvnw clean install -DskipTests && java -jar target/taskmanager-0.0.1-SNAPSHOT.jar
+web: java -jar target/taskmanager-0.0.1-SNAPSHOT.jar
