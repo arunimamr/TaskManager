@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: TaskManager
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task_manager_db
+    username: postgres
+    password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    default-schema: public
+
+
+
+
