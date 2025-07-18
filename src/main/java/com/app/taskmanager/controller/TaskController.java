@@ -42,11 +42,12 @@ public class TaskController {
 
     @GetMapping("/all")
     public ResponseEntity<Page<TaskDto>> getAllTasks(
-            @RequestParam(required = false) String status,
+            @RequestParam(defaultValue = "0") int pageNum,
             @RequestParam(defaultValue = "5") int pageSize,
-            @RequestParam(defaultValue = "0") int pageNum
+            @RequestParam(required = false) String status
     ){
-        return ResponseEntity.ok(taskService.getAllTasks(status, pageNum, pageSize));
+        var response = taskService.getAllTasks(status, pageNum, pageSize);
+        return ResponseEntity.ok(response);
     }
 
 }
