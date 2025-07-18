@@ -12,6 +12,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -57,13 +58,14 @@ public class TaskService {
         Pageable pageable = PageRequest.of(pageNum, pageSize, Sort.by("dueDate").ascending());
         Page<Task> taskPageResult;
         if(!ObjectUtils.isEmpty(status)){
+            TaskStatus taskStatus;
             try{
-                TaskStatus taskStatus = TaskStatus.valueOf(status.replace(" ", "_").toUpperCase());
-                taskPageResult = taskRepository.findAllByStatus(taskStatus,pageable);
+                taskStatus = TaskStatus.valueOf(status.replace(" ", "_").toUpperCase());
             }
             catch (IllegalArgumentException ex){
-                throw new RuntimeException("Invalid task status value : " + status);
+                throw new IllegalArgumentException("Invalid task status value : " + status);
             }
+            taskPageResult = taskRepository.findAllByStatus(taskStatus,pageable);
         }
         else{
             taskPageResult = taskRepository.findAll(pageable);
