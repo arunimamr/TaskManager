@@ -38,10 +38,10 @@ A mini project for managing tasks built on Java, Springboot, PostgreSQL and Liqu
     2. GET: /tasks/{id}   -> Retrieve a task using Id
     3. PUT: /tasks/{id}   -> Update an existing task
     4. DELETE: /tasks/{id}  -> Delete a task
-    5. GET: /tasks/all  -> Retrives all tasks and allows filtering based on Status
+    5. GET: /tasks/all  -> Retrieves all tasks and allows filtering based on Status
 
   # Validation
-    - titile : Required
+    - title : Required
     - dueDate : must be a valid current or future date with format (yyyy-MM-dd)
     - status : TODO, IN_PROGRESS, DONE
   
